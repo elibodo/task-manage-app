@@ -24,7 +24,7 @@ A task management application where users can save the information into localsto
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/task-manager-app.git
+git clone https://github.com/elibodo/task-manage-app.git
 cd task-manager-app
 ```
 
