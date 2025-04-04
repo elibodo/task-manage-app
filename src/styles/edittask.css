@@ -1,0 +1,78 @@
+/* modal overlay with changes for when its open */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* modal container */
+.modal-content {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+
+/* buttons and hover effects */
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.save-button:hover {
+  background-color: #45a049;
+  color: white;
+}
+.close-button:hover {
+  background-color: #e53935;
+  color: white;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  resize: vertical;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  min-height: 150px;
+  max-height: 300px;
+  box-sizing: border-box;
+}
+
+/* error message */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  padding-left: 5px;
+}

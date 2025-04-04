@@ -1,0 +1,79 @@
+/* task box container */
+.task-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.task-details {
+  text-align: left;
+  margin: 0;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+/* task box buttons and hover effects */
+.task-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.task-buttons button {
+  flex: 1;
+  min-width: 100px;
+}
+button:hover.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+}
+button:hover.complete-btn {
+  background-color: #28a745;
+  color: white;
+}
+button:hover.edit-btn {
+  background-color: #007bff;
+  color: white;
+}
+button:disabled {
+  background-color: #ddd;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* styling for when a task is complete */
+.task-box.completed {
+  background-color: rgba(152, 251, 152, 0.3);
+}
+.task-box.completed .task-details {
+  text-decoration: line-through;
+  color: #666;
+}
+
+/* responsive design changes for box and buttons */
+@media (max-width: 400px) {
+  .task-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .task-buttons button {
+    flex: 1 1 30%;
+    min-width: 80px;
+  }
+}

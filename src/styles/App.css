@@ -1,0 +1,140 @@
+/* general app layout and container for the page */
+.app {
+  align-items: center;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* button and hover effect */
+button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+button:hover {
+  background-color: #e0e0e0;
+}
+
+/* header styling for different screen sizes */
+h1 {
+  text-align: center;
+  margin: 25px;
+  font-size: 3rem;
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+h2 {
+  text-align: center;
+  margin: 10px;
+  font-size: 2rem;
+}
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* grid layout of the tasks */
+.task-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .task-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* task filters, inputs, and labels with responsive items */
+.task-filters {
+  display: flex;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  width: fit-content;
+  align-items: center;
+  box-sizing: border-box;
+  height: auto;
+}
+@media screen and (max-width: 300px) {
+  .task-filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .task-filters {
+    font-size: small;
+  }
+}
+.task-filters input[type="radio"] {
+  display: none;
+}
+.task-filters label {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  border-right: 1px solid #ccc;
+  transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap;
+  width: 100%;
+}
+.task-filters label:last-of-type {
+  border-right: none;
+}
+.task-filters input[type="radio"]:checked + label {
+  background-color: #4caf50;
+  color: white;
+}
+.task-filters-wrapper {
+  text-align: center;
+  width: 65%;
+}
+@media screen and (max-width: 1024px) {
+  .task-filters-wrapper {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .task-filters-wrapper {
+    width: 100%;
+  }
+}
+.task-filters-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 768px) {
+  .task-filters-header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* message for no tasks, none in progress, none complete */
+.message {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 20px;
+}
